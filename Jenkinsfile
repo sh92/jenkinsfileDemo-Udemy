@@ -16,14 +16,10 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        
+        stage('Deploy to Staging') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                build job: 'Deploy-to-staging'
             }
         }
     }
